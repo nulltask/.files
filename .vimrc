@@ -1,0 +1,2 @@
+colorscheme torte
+set number
