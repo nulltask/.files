@@ -6,11 +6,15 @@ export PATH=./node_modules/.bin:$PATH
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
-[[ -s "/Users/nulltask/.rvm/scripts/rvm" ]] && source "/Users/nulltask/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 export GISTY_DIR=~/Documents/gist
 export GISTY_SSL_CA=/System/Library/OpenSSL/cert.pem
 export GISTY_SSL_VERIFY="none"
+
+export JAVA_HOME="$(/usr/libexec/java_home)"
+export EC2_PRIVATE_KEY="$(/bin/ls $HOME/.ec2/pk-*.pem)"
+export EC2_CERT="$(/bin/ls $HOME/.ec2/cert-*.pem)"
+export EC2_HOME="$HOME/.brew/Cellar/ec2-api-tools/1.5.2.3/jars"
 
 alias ls='ls --color'
 alias ll='ls -laF --color'
