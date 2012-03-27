@@ -22,3 +22,5 @@ alias grep='grep --color'
 alias egrep='egrep --color'
 alias fgrep='fgrep --color'
 
+. `brew --prefix git`/etc/bash_completion.d/git-completion.bash
+export PS1='\u@\h\[\033[33m\] \w$(__git_ps1) \n\[\033[31m\]♪\[\033[00m\] '
