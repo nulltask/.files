@@ -17,7 +17,7 @@ export EC2_CERT="$(/bin/ls $HOME/.ec2/cert-*.pem)"
 export EC2_HOME="$HOME/.brew/Cellar/ec2-api-tools/1.5.2.3/jars"
 
 alias ls='ls --color'
-alias ll='ls -laF --color'
+alias ll='\ls -laF --color'
 alias grep='grep --color'
 alias egrep='egrep --color'
 alias fgrep='fgrep --color'
