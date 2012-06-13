@@ -2,10 +2,14 @@ export PATH=~/bin:$PATH
 export PATH=./bin:$PATH
 export PATH=~/.brew/bin:$PATH
 export PATH=~/.brew/sbin:$PATH
+export PATH=~/.cabal/bin:$PATH
 export PATH=./node_modules/.bin:$PATH
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 
+export PYTHONPATH="/Users/nulltask/.brew/lib/python2.7/site-packages:$PYTHONPATH"
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+export PATH=$PATH:$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
 
 export GISTY_DIR=~/Documents/gist
 export GISTY_SSL_CA=/System/Library/OpenSSL/cert.pem
@@ -24,9 +28,23 @@ alias fgrep='fgrep --color'
 
 . `brew --prefix git`/etc/bash_completion.d/git-completion.bash
 . `brew --prefix`/Library/Contributions/brew_bash_completion.sh
+
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+  . `brew --prefix`/etc/bash_completion
+fi
+
 export PS1='\u@\h\[\033[33m\] \w$(__git_ps1) \n\[\033[31m\]♪\[\033[00m\] '
 
 if test -s "$HOME/.secret"
 then
   source "$HOME/.secret"
 fi
+
+# {{{
+# Node Completion - Auto-generated, do not touch.
+shopt -s progcomp
+for f in $(command ls ~/.node-completion); do
+  f="$HOME/.node-completion/$f"
+  test -f "$f" && . "$f"
+done
+# }}}
