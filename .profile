@@ -28,8 +28,8 @@ alias grep='grep --color'
 alias egrep='egrep --color'
 alias fgrep='fgrep --color'
 
-. `brew --prefix git`/etc/bash_completion.d/git-completion.bash
-. `brew --prefix`/Library/Contributions/brew_bash_completion.sh
+. /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
+. /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
 
 if [ -f `brew --prefix`/etc/bash_completion ]; then
   . `brew --prefix`/etc/bash_completion
