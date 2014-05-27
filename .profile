@@ -14,9 +14,13 @@ export GISTY_SSL_CA=/System/Library/OpenSSL/cert.pem
 export GISTY_SSL_VERIFY="none"
 
 export JAVA_HOME="$(/usr/libexec/java_home)"
-export EC2_PRIVATE_KEY="$(/bin/ls $HOME/.ec2/pk-*.pem)"
-export EC2_CERT="$(/bin/ls $HOME/.ec2/cert-*.pem)"
-export EC2_HOME=`brew --prefix ec2-api-tools`/jars
+
+if [ -d $HOME/.ec2 ]
+then
+  export EC2_PRIVATE_KEY="$(/bin/ls $HOME/.ec2/pk-*.pem)"
+  export EC2_CERT="$(/bin/ls $HOME/.ec2/cert-*.pem)"
+  export EC2_HOME=`brew --prefix ec2-api-tools`/jars
+fi
 
 alias ls='ls --color'
 alias ll='\ls -laF --color'
