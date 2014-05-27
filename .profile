@@ -8,8 +8,6 @@ export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 
 export PYTHONPATH="/Users/nulltask/.brew/lib/python2.7/site-packages:$PYTHONPATH"
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
-export PATH=$PATH:$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
 
 export GISTY_DIR=~/Documents/gist
 export GISTY_SSL_CA=/System/Library/OpenSSL/cert.pem
@@ -39,6 +37,8 @@ if test -s "$HOME/.secret"
 then
   source "$HOME/.secret"
 fi
+export RBENV_ROOT=/Users/nulltask/.brew/var/rbenv
+eval "$(rbenv init -)"
 
 # {{{
 # Node Completion - Auto-generated, do not touch.
