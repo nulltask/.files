@@ -33,10 +33,6 @@ fi
 
 export PS1='\u@\h\[\033[33m\] \w$(__git_ps1) \n\[\033[31m\]♪\[\033[00m\] '
 
-if test -s "$HOME/.secret"
-then
-  source "$HOME/.secret"
-fi
 export RBENV_ROOT=/Users/nulltask/.brew/var/rbenv
 eval "$(rbenv init -)"
 
@@ -48,3 +44,4 @@ for f in $(command ls ~/.node-completion); do
   test -f "$f" && . "$f"
 done
 # }}}
+test -s "$HOME/.secret" && source "$HOME/.secret"
