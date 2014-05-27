@@ -36,12 +36,4 @@ export PS1='\u@\h\[\033[33m\] \w$(__git_ps1) \n\[\033[31m\]♪\[\033[00m\] '
 export RBENV_ROOT=/Users/nulltask/.brew/var/rbenv
 eval "$(rbenv init -)"
 
-# {{{
-# Node Completion - Auto-generated, do not touch.
-shopt -s progcomp
-for f in $(command ls ~/.node-completion); do
-  f="$HOME/.node-completion/$f"
-  test -f "$f" && . "$f"
-done
-# }}}
 test -s "$HOME/.secret" && source "$HOME/.secret"
