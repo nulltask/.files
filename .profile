@@ -5,9 +5,9 @@ export PATH=~/.brew/sbin:$PATH
 export PATH=~/.cabal/bin:$PATH
 export PATH=./node_modules/.bin:$PATH
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 export PYTHONPATH="/Users/nulltask/.brew/lib/python2.7/site-packages:$PYTHONPATH"
-
 
 export GISTY_DIR=~/Documents/gist
 export GISTY_SSL_CA=/System/Library/OpenSSL/cert.pem
