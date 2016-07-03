@@ -6,6 +6,7 @@ export PATH=~/.cabal/bin:$PATH
 export PATH=./node_modules/.bin:$PATH
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 export PATH=$HOME/.nodebrew/current/bin:$PATH
+export PATH="/usr/local/sbin:$PATH"
 
 export ANDROID_HOME=/Users/nulltask/.brew/opt/android-sdk
 export PYTHONPATH="/Users/nulltask/.brew/lib/python2.7/site-packages:$PYTHONPATH"
