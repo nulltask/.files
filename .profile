@@ -14,7 +14,7 @@ export GISTY_DIR=~/Documents/gist
 export GISTY_SSL_CA=/System/Library/OpenSSL/cert.pem
 export GISTY_SSL_VERIFY="none"
 
-export JAVA_HOME="$(/usr/libexec/java_home -v 1.6)"
+export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
 
 if [ -d $HOME/.ec2 ]
 then
