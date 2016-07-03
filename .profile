@@ -38,7 +38,31 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
   . `brew --prefix`/etc/bash_completion
 fi
 
-export PS1='\u@\h\[\033[33m\] \w$(__git_ps1) \n\[\033[31m\]♪\[\033[00m\] '
+function __show_status() {
+  local status=$(echo ${PIPESTATUS[@]})
+  local SETCOLOR_SUCCESS="echo -en \\033[0;32m"
+  local SETCOLOR_FAILURE="echo -en \\033[0;31m"
+  local SETCOLOR_WARNING="echo -en \\033[0;33m"
+  local SETCOLOR_NORMAL="echo -en \\033[0;39m"
+
+  local SETCOLOR s
+  for s in ${status}
+  do
+      if [ ${s} -gt 100 ]; then
+          SETCOLOR=${SETCOLOR_FAILURE}
+      elif [ ${s} -gt 0 ]; then
+          SETCOLOR=${SETCOLOR_WARNING}
+      else
+          SETCOLOR=${SETCOLOR_SUCCESS}
+      fi
+  done
+  ${SETCOLOR}
+  echo -e "\n (exit ${status// /|})\n"
+  ${SETCOLOR_NORMAL}
+}
+PROMPT_COMMAND=' __show_status;'${PROMPT_COMMAND//__show_status;/}
+
+export PS1='\[\033[32m\] \w$(__git_ps1)\n\[\033[31m\] λ\[\033[00m\] '
 
 export RBENV_ROOT=/Users/nulltask/.brew/var/rbenv
 eval "$(rbenv init -)"
