@@ -46,3 +46,7 @@ eval "$(rbenv init -)"
 test -s "$HOME/.secret" && source "$HOME/.secret"
 
 eval "$(direnv hook bash)"
+
+cd () {
+  builtin cd $@ && ls
+}
