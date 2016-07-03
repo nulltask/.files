@@ -44,3 +44,5 @@ export RBENV_ROOT=/Users/nulltask/.brew/var/rbenv
 eval "$(rbenv init -)"
 
 test -s "$HOME/.secret" && source "$HOME/.secret"
+
+eval "$(direnv hook bash)"
