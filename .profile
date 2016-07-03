@@ -50,3 +50,5 @@ eval "$(direnv hook bash)"
 cd () {
   builtin cd $@ && ls
 }
+
+archey
