@@ -67,7 +67,9 @@ test -s "$HOME/.secret" && source "$HOME/.secret"
 eval "$(direnv hook bash)"
 
 cd () {
-  builtin cd $@ && ls
+  builtin cd "$@" && ls
 }
 
 archey
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
